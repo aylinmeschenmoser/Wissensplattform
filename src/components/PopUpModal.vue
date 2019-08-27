@@ -50,8 +50,8 @@ export default {
 .wp-pop-up-box-header {
   &__close {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 1rem;
+    right: 1rem;
   }
 }
 
@@ -72,10 +72,10 @@ export default {
     position: fixed;
     z-index: 101;
     background-color: white;
-    top: 80px;
-    right: 10px;
-    left: 10px;
-    bottom: 55px;
+    top: .5rem;
+    right: .5rem;
+    left: .5rem;
+    bottom: .5rem;
 
     @media screen and (min-width: $breakpoint-tablet) {
       top: 100px;

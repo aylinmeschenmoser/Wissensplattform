@@ -7,6 +7,7 @@
 </template>
 <script>
 import SkillBox from '../components/SkillBox.vue';
+
 export default {
   name: 'wp-skills',
   components: {

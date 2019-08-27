@@ -35,15 +35,17 @@
               <textarea
                 class="wp-news-box-pop-up-modal-content__entry"
                 value="Kurztext schreiben"
-                id="text"
-                cols="40"
-                rows="10">
-                </textarea>
-              <p class="wp-news-box-pop-up-modal-content__sign">0 von max. 320 Zeichen</p>
+                rows="10"
+                v-model="userInput"
+                @input="countCharacters">
+              </textarea>
+              <p class="wp-news-box-pop-up-modal-content__characters">{{ userInputLength }} von max. {{ maxInputLength }} Zeichen</p>
               <input
                 class="wp-news-box-pop-up-modal-content__submit"
-                type="submit"
-                value="Absenden">
+                type="button"
+                value="Absenden"
+                :disabled="userInputLength === 0"
+                @click="saveUserInput">
               <!-- hier kann man Komponenten fürs Popup anlege, wie divs, etc. -->
             </div>
           </template>
@@ -70,8 +72,11 @@ export default {
   data() {
     return {
       searchTerm: '',
+      maxInputLength: 320,
       modalIsOpen: false,
       numberOfVisibleEntries: 4,
+      userInput: '',
+      userInputLength: 0
     };
   },
 
@@ -108,10 +113,29 @@ export default {
       this.modalIsOpen = true;
     },
 
-    loadMoreEntries() {
-      this.numberOfVisibleEntries += 10;
-      console.log('Mehr Einträge wurden geladen');
+    countCharacters() {
+      console.log('NewsBox::countCharacters()');
+
+      if (this.userInput.length > this.maxInputLength) {
+        this.userInput = this.userInput.slice(0, this.maxInputLength);
+      }
+
+      this.userInputLength = this.userInput.length;
     },
+
+    loadMoreEntries() {
+      console.log('NewsBox::loadMoreEntries()');
+
+      this.numberOfVisibleEntries += 10;
+    },
+
+    saveUserInput() {
+      console.log('NewsBox::saveUserInput()');
+
+      this.$emit('user-input', this.userInput);
+      this.userInput = '';
+      this.modalIsOpen = false;
+    }
   }
 };
 </script>
@@ -212,14 +236,15 @@ $_news-box-add-size: 1.5rem;
     background-color: $color-news-box-header;
     resize: none;
     margin-top: 1rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: .5rem;
+
     &:focus {
       outline:none;
     }
   }
 
-  &__sign {
+  &__characters {
     font-size: 0.6rem;
   }
 
@@ -228,19 +253,28 @@ $_news-box-add-size: 1.5rem;
     border-radius: 10px;
     background: $color-text-active;
     color: white;
-    padding: 0.2rem;
+    padding: 0.5rem .8rem;
     border: 1px solid $color-text-active;
+    cursor: pointer;
 
     &:hover {
-      cursor: pointer;
       background: white;
       color: $color-text-active;
       border: 1px solid $color-text-active;
-
     }
 
     &:focus {
-      outline:none;
+      outline: none;
+    }
+
+    &:disabled {
+      opacity: .5;
+      cursor: default;
+
+      &:hover {
+        background: $color-text-active;
+        color: white;
+      }
     }
   }
 }

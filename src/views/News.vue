@@ -1,7 +1,12 @@
 <template>
   <div class="wp-news">
     <div class="wp-news__container wp-news-container">
-      <news-box box-title="Schnelle Info" :news-items="quickNews" class="wp-news-container__item" />
+      <news-box
+        box-title="Schnelle Info"
+        :news-items="quickNews"
+        class="wp-news-container__item"
+        @user-input="saveUserInput"
+      />
       <news-box box-title="Blog" class="wp-news-container__item" />
       <news-box box-title="Neuestes Wissen" class="wp-news-container__item" />
     </div>
@@ -32,6 +37,18 @@ export default {
 
   created() {
     console.log('News::created()');
+  },
+
+  methods: {
+    saveUserInput(userInput) {
+      console.log('News::saveUserInput()', userInput);
+
+      this.quickNews.unshift({
+        text: userInput,
+        author: 'Aylin',
+        date: '27.08.2019'
+      });
+    }
   }
 };
 </script>
