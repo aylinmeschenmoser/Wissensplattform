@@ -1,18 +1,25 @@
 <template>
+  <div class="wp-facebook-box">
+    <header class="wp-facebook-box__header wp-facebook-box-header">
+        <h2 class="wp-facebook-box-header__title">Facebook</h2>
+    </header>
+  </div>
 </template>
 
 <script>
-import NewsBoxEntry from './NewsBoxEntry.vue';
-import PopUpModal from './PopUpModal.vue';
 
 export default {
-  name: 'NewsBox',
+  name: 'FacebookBox',
   components: {
-    NewsBoxEntry,
-    PopUpModal
   },
 };
 </script>
 
 <style lang="scss">
+@import '../styles/mixins';
+
+.wp-facebook-box{
+  @include news-box;
+}
+
 </style>

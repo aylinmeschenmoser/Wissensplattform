@@ -1,14 +1,16 @@
 <template>
     <div class="wp-news-box">
       <header class="wp-news-box__header wp-news-box-header">
-        <h2 class="wp-news-box-header__title">{{ boxTitle }}</h2>
+        <h2 class="wp-news-box-header__title wp-news-box-title">{{ boxTitle }}</h2>
         <a class="wp-news-box-header__add" @click="add">+</a>
       </header>
-      <main class="wp-news-box__content wp-news-box-content">
+      <div class="wp-news-box__search wp-news-box-search">
         <input
-          class="wp-news-box-content__search"
+          class="wp-news-box-search__input"
           placeholder="Infos durchsuchen..."
           v-model="searchTerm" />
+      </div>
+      <main class="wp-news-box__content wp-news-box-content">
         <news-box-entry
           class="wp-news-box-content__entry"
           v-for="(newsItem, index) in visibleNewsItems"
@@ -16,15 +18,13 @@
           :text="newsItem.text"
           :author="newsItem.author"
           :date="newsItem.date" />
-      </main>
-      <footer class="wp-news-box__footer wp-news-box-footer">
         <button
-          class="wp-news-box-footer__load-more"
+          class="wp-news-box-content__load-more"
           v-if="hasMoreEntries"
           @click="loadMoreEntries">
           Mehr laden...
         </button>
-      </footer>
+      </main>
       <pop-up-modal
         class="wp-news-box__pop-up-modal wp-news-box-pop-up-modal"
         :is-open="modalIsOpen"
@@ -144,22 +144,13 @@ export default {
 
 <style lang="scss">
 @import '../styles/variables';
+@import '../styles/mixins';
 
 $_news-box-header: rgb(240, 240, 241);
 $_news-box-add-size: 1.5rem;
 
 //helper blocks
 .wp-news-box-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: $color-text-active;
-  font-weight: inherit;
-
-  &__title {
-    font-weight: 400;
-  }
-
   &__add {
     display: block;
     border-radius: 50%;
@@ -171,19 +162,15 @@ $_news-box-add-size: 1.5rem;
   }
 }
 
-.wp-news-box-content {
-  &__entry {
-    &:not(:last-of-type) {
-      border-bottom: 1px solid grey;
-    }
-  }
+.wp-news-box-search {
+  padding: 0 1rem;
+  height: 2.5rem;
 
-  &__search {
+  &__input {
     width: 100%;
     border: 1px solid $color-text;
     border-radius: 10px;
     padding: 0.6rem 1rem;
-    margin: 1rem 0;
 
     &::placeholder {
       color: rgb(184, 184, 184)
@@ -195,34 +182,29 @@ $_news-box-add-size: 1.5rem;
   }
 }
 
-.wp-news-box-footer {
-  display: flex;
-  justify-content: center;
+.wp-news-box-content {
+  &__entry {
+    &:not(:last-of-type) {
+      border-bottom: 1px solid grey;
+    }
+  }
 
   &__load-more {
-    padding: 0.4rem;
-    border-radius: 10px;
     margin-top: 1rem;
     background: none;
     border: none;
-    background-color: $color-text-active;
-    color: white;
+    background-color: white;
+    color: $color-text-active;
     font-size: 0.85rem;
 
     &:focus {
       outline:none;
     }
-
-    @media screen and (min-width: $breakpoint-tablet) {
-      display: none;
-    }
   }
 }
 
 .wp-news-box-pop-up-modal-content {
-  margin-top: 2rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: 2rem 1rem 2rem 1rem;
 
   @media screen and (min-width: $breakpoint-tablet) {
     margin-left: 2rem;
@@ -239,6 +221,7 @@ $_news-box-add-size: 1.5rem;
     resize: none;
     margin-top: 1rem;
     font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 1rem;
 
     &:focus {
       outline:none;
@@ -282,7 +265,6 @@ $_news-box-add-size: 1.5rem;
 }
 
 .wp-news-box {
-    background-color: #fff;
-    padding: 1rem;
+  @include news-box;
 }
 </style>

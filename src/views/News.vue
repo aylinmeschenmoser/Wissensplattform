@@ -7,25 +7,24 @@
         class="wp-news-container__item"
         @user-input="saveUserInput"
         />
-      <blog-box box-title="Blog" class="wp-news-container__item"/>
-      <news-box box-title="Neustes Wissen" class="wp-news-container__item"/>
-      <news-box box-title="HUB" class="wp-news-container__item"/>
-      <news-box box-title="Facebook" class="wp-news-container__item"/>
-      <news-box box-title="Newsfeed (extern)" class="wp-news-container__item"/>
+      <facebook-box class="wp-news-container__item"/>
+      <newsfeed-box class="wp-news-container__item"/>
     </div>
   </div>
 </template>
 
 <script>
 import NewsBox from '../components/NewsBox.vue';
-import BlogBox from '../components/BlogBox.vue';
+import FacebookBox from '../components/FacebookBox.vue';
+import NewsfeedBox from '../components/NewsfeedBox.vue';
 
 export default {
-  name: 'wp-news',
+  name: 'News',
 
   components: {
     NewsBox,
-    BlogBox
+    FacebookBox,
+    NewsfeedBox
   },
 
   methods: {
@@ -42,7 +41,7 @@ export default {
   data() {
     return {
       quickNews: [{
-        text: 'Team-Einladung PE News Feed Zoom (Berlin/Stgt). Hallo liebe PE’ler.Wie vorhin im Zoom angekündigt habe ich nun alle zu Team eingeladen. Ich hoffe, dass ich keinen vergessen habe. Falls doch, bitte kurz Bescheid geben. Dann füge ich euch noch hinzu. 🙂 Das Trelloboard werden wir dann schließen.Liebe Grüße Nadine',
+        text: 'Team-Einladung PE News Feed Zoom (Berlin/Stgt). Hallo liebe PE’ler.Wie vorhin im Zoom angekündigt habe ich nun alle zu Team eingeladen. Ich hoffe, dass ich keinen vergessen habe. Falls doch, bitte kurz Bescheid geben. Dann füge ich euch noch hinzu. 🙂 Das Trelloboard werden wir dann schließen. Liebe Grüße Nadine',
         author: 'Nadine Bierbaum',
         date: '26. August 2019',
       }, {
@@ -182,7 +181,6 @@ export default {
 
   &__item {
     flex: 1 1 100%;
-    margin-bottom: 1rem;
     min-height: 30vh;
 
     &:not(:first-of-type) {
@@ -199,6 +197,7 @@ export default {
 
     @media screen and (min-width: $breakpoint-tablet) {
       flex: 0 1 32%;
+      max-height: calc(100vh - 7rem);
     }
   }
 }

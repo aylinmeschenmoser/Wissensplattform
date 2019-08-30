@@ -1,0 +1,28 @@
+@import './variables';
+
+@mixin news-box {
+  background-color: #fff;
+
+  &-header {
+    height: 4rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+      font-weight: 400;
+      color: $color-text-active;
+    }
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 1rem 1rem;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      max-height: calc(100vh - 14.5rem);
+      overflow-y: scroll;
+    }
+  }
+}

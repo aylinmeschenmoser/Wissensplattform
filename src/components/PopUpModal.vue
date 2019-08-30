@@ -81,14 +81,12 @@ export default {
       top: 100px;
       right: 10px;
       left: 10px;
-      bottom: 300px;
+      bottom: auto;
     }
 
     @media screen and (min-width: $breakpoint-desktop) {
-      top: 100px;
       right: 300px;
       left: 300px;
-      bottom: 400px;
     }
   }
 }

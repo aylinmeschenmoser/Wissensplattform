@@ -72,8 +72,12 @@ body{
   &__content-wrapper {
     flex: 1 0 auto;
 
+
     @media screen and (min-width: $breakpoint-mobile) {
-      padding: 1rem;
+      padding: 1rem
+    }
+    @media screen and (min-width: $breakpoint-desktop) {
+      padding: 1.5rem 0;
     }
   }
 

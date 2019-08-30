@@ -1,6 +1,6 @@
 <template>
   <div class="wp-blog">
-    <h1>HUB</h1>
+    <h1>Blog</h1>
     <div class="wp-blog__contrainer wp-blog-container">
       <div class="wp-blog-container__categories">
       </div>

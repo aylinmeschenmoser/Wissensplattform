@@ -183,13 +183,14 @@ $_color-text: rgb(103, 109, 113);
 
 //main block muss ganz nach unten
 .wp-header {
+  height: 5rem;
+  padding: 0 1rem;
   position: relative;
   z-index: 10;
   display: flex;
   background-color: $color-news-box-header;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
   -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
   -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
