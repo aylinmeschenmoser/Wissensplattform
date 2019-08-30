@@ -1,56 +1,66 @@
 <template>
-  <ul class="wp-footer-mobile">
-    <li class="wp-footer-mobile__item wp-menu-item">
-      <router-link
+    <ul class="wp-footer-mobile">
+      <li class="wp-footer-mobile__item wp-menu-item">
+        <router-link
         class="wp-menu-item__link"
         to="/news"
-        title="News"
+        titel="News"
         active-class="wp-menu-item__link--active"
         exact>
         <i class="wp-menu-item__news fab fa-newspaper-o"></i>
-      </router-link>
-    </li>
-    <li class="wp-footer-mobile__item wp-menu-item">
-      <router-link
+        </router-link>
+      </li>
+      <li class="wp-footer-mobile__item wp-menu-item">
+        <router-link
         class="wp-menu-item__link"
         to="/blog"
-        title="Blog"
+        titel="Blog"
         active-class="wp-menu-item__link--active"
         exact>
         <i class="wp-menu-item__blog fab fa-th-large"></i>
-      </router-link>
-    </li>
-    <li class="wp-footer-mobile__item wp-menu-item">
-      <router-link
+        </router-link>
+      </li>
+      <li class="wp-footer-mobile__item wp-menu-item">
+        <router-link
         class="wp-menu-item__link"
         to="/knowledge"
-        title="Wissen"
+        titel="Wissen"
         active-class="wp-menu-item__link--active"
         exact>
         <i class="wp-menu-item__knowledge fab fa-book"></i>
-      </router-link>
-    </li>
-    <li class="wp-footer-mobile__item wp-menu-item">
-      <router-link
+        </router-link>
+      </li>
+      <li class="wp-footer-mobile__item wp-menu-item">
+        <router-link
         class="wp-menu-item__link"
         to="/skills"
-        title="Skills"
+        titel="Skills"
         active-class="wp-menu-item__link--active"
         exact>
-        <i class="wp-menu-item__skills fab fa-lightbulb-o"></i>
-      </router-link>
-    </li>
-    <li class="wp-footer-mobile__item wp-menu-item">
-      <router-link
+        <i class="wp-menu-item__skills fab fa-cogs"></i>
+        </router-link>
+      </li>
+      <li class="wp-footer-mobile__item wp-menu-item">
+        <router-link
         class="wp-menu-item__link"
         to="/company"
-        title="Unternehmen"
+        titel="Unternehmen"
         active-class="wp-menu-item__link--active"
         exact>
         <i class="wp-menu-item__company fab fa-building"></i>
-      </router-link>
-    </li>
-  </ul>
+        </router-link>
+      </li>
+      <li class="wp-footer-mobile__item wp-menu-item">
+        <router-link
+        class="wp-menu-item__link"
+        to="/hub"
+        titel="HUB"
+        active-class="wp-menu-item__link--active"
+        exact>
+        <i class="wp-menu-item__company fab fa-lightbulb-o"></i>
+        </router-link>
+      </li>
+    </ul>
 </template>
 
 <script>
@@ -71,33 +81,31 @@ export default {
 
 <style lang="scss">
 @import '../styles/variables';
-
+$_color-text-active: rgb(24, 119, 184);
 $_color-text: rgb(103, 109, 113);
-$_color-text--active: rgb(0, 167, 229);
 
-// helper block
 .wp-menu-item {
   &__link {
+    color: white;
     text-decoration: none;
     text-transform: uppercase;
-    color: white;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 14px;
 
     &--active {
-      color: $_color-text--active;
+      color: rgb(0, 167, 229);
     }
   }
 }
 
-// main block
 .wp-footer-mobile {
-  background: $_color-text;
+  background-color: $_color-text;
   display: flex;
   justify-content: space-between;
   list-style: none;
   padding: 0 1rem;
   align-items: center;
-  box-shadow: 0 -1px 4px 0 rgba(0, 0, 0, .3);
-}
+  box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.3);
+  }
+
 </style>

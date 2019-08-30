@@ -72,10 +72,10 @@ export default {
     position: fixed;
     z-index: 101;
     background-color: white;
-    top: .5rem;
-    right: .5rem;
-    left: .5rem;
-    bottom: .5rem;
+    top: 0.5rem;
+    right: 0.5rem;
+    left: 0.5rem;
+    bottom: 0.5rem;
 
     @media screen and (min-width: $breakpoint-tablet) {
       top: 100px;

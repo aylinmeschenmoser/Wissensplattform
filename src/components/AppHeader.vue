@@ -1,53 +1,62 @@
 <template>
   <header class="wp-header">
     <img src="../assets/np-logo.png" class="wp-header__logo" />
-    <ul class="wp-header__menu wp-menu">
-      <li class="wp-menu__item wp-menu-item">
-        <router-link
-          class="wp-menu-item__link"
-          to="/news"
-          active-class="wp-menu-item__link--active"
-          exact>
-          News
-        </router-link>
-      </li>
-      <li class="wp-menu__item wp-menu-item">
-        <router-link
-          class="wp-menu-item__link"
-          to="/blog"
-          active-class="wp-menu-item__link--active"
-          exact>
-          Blog
-        </router-link>
-      </li>
-      <li class="wp-menu__item wp-menu-item">
-        <router-link
-          class="wp-menu-item__link"
-          to="/knowledge"
-          active-class="wp-menu-item__link--active"
-          exact>
-          Wissen
-        </router-link>
-      </li>
-      <li class="wp-menu__item wp-menu-item">
-        <router-link
-          class="wp-menu-item__link"
-          to="/skills"
-          active-class="wp-menu-item__link--active"
-          exact>
-          Skills
-        </router-link>
-      </li>
-      <li class="wp-menu__item wp-menu-item">
-        <router-link
-          class="wp-menu-item__link"
-          to="/company"
-          active-class="wp-menu-item__link--active"
-          exact>
-          Unternehmen
-        </router-link>
-      </li>
-    </ul>
+      <ul class="wp-header__menu wp-menu">
+        <li class="wp-menu__item wp-menu-item">
+          <router-link
+            class="wp-menu-item__link"
+            to="/news"
+            active-class="wp-menu-item__link--active"
+            exact>
+            News
+          </router-link>
+        </li>
+        <li class="wp-menu__item wp-menu-item">
+          <router-link
+            class="wp-menu-item__link"
+            to="/blog"
+            active-class="wp-menu-item__link--active"
+            exact>
+            Blog
+          </router-link>
+        </li>
+        <li class="wp-menu__item wp-menu-item">
+          <router-link
+            class="wp-menu-item__link"
+            to="/knowledge"
+            active-class="wp-menu-item__link--active"
+            exact>
+            Wissen
+          </router-link>
+        </li>
+        <li class="wp-menu__item wp-menu-item">
+          <router-link
+            class="wp-menu-item__link"
+            to="/skills"
+            active-class="wp-menu-item__link--active"
+            exact>
+            Skills
+          </router-link>
+        </li>
+        <li class="wp-menu__item wp-menu-item">
+          <router-link
+            class="wp-menu-item__link"
+            to="/company"
+            active-class="wp-menu-item__link--active"
+            exact>
+            Unternehmen
+          </router-link>
+        </li>
+        <li class="wp-menu__item wp-menu-item">
+          <router-link
+            class="wp-menu-item__link"
+            to="/hub"
+            active-class="wp-menu-item__link--active"
+            exact>
+            HUB
+          </router-link>
+        </li>
+      </ul>
     <div class="wp-header__icons wp-header-icons">
       <i class="wp-header-icons__item fab fa-search" @click="showSearchPopup"></i>
       <router-link
@@ -60,13 +69,11 @@
     <div class="wp-header__search-popup wp-search-popup">
       <div
         class="wp-search-popup__backdrop"
-        :class="{ 'wp-search-popup__backdrop--show': isSearchPopupOpen }">
-      </div>
+        :class="{ 'wp-search-popup__backdrop--show': isSearchPopupOpen }"></div>
       <div
         class="wp-search-popup__dialog wp-search-popup-dialog"
         :class="{ 'wp-search-popup-dialog--show': isSearchPopupOpen }">
-        <input
-          class="wp-search-popup-dialog__input"
+        <input class="wp-search-popup-dialog__input"
           type="text"
           placeholder="Suchbegriff"
           v-model="searchTerm" />
@@ -105,7 +112,7 @@ export default {
     search() {
       console.log('AppHeader::search()', this.searchTerm);
 
-      // TODO implement
+      // TODO search
     },
 
     showSearchPopup() {
@@ -121,21 +128,20 @@ export default {
 @import '../styles/variables';
 
 $_color-text-active: rgb(24, 119, 184);
+$_color-text: rgb(103, 109, 113);
 
-// helper blocks
-.wp-menu {
+.wp-menu{
   display: flex;
   list-style: none;
 }
 
-.wp-menu-item {
-  padding: 1rem .4rem;
-
+.wp-menu-item{
+  padding: 1rem 0.4rem;
   &__link {
     text-decoration: none;
     text-transform: uppercase;
-    color: rgb(138, 143, 146);
-    font-weight: 400;
+    color: $_color-text;
+    font-weight: 500;
     font-size: 14px;
 
     &:hover {
@@ -149,44 +155,44 @@ $_color-text-active: rgb(24, 119, 184);
 }
 
 .wp-header-icons {
-  color: $color-text;
+  color: $color-items;
 
   &__item {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     padding-left: 1.5rem;
   }
 }
 
-.wp-search-popup {
+.wp-search-popup-dialog {
   &__backdrop {
     position: fixed;
-    z-index: 100;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #000;
+    background-color: black;
     opacity: 0;
     pointer-events: none;
+    z-index: 100;
 
     &--show {
-      opacity: .6;
+      opacity: 0.6;
     }
   }
 }
 
-// main block
+//main block muss ganz nach unten
 .wp-header {
   position: relative;
   z-index: 10;
-  background: $color-news-box-header;
   display: flex;
+  background-color: $color-news-box-header;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, .3);
-  -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, .3);
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, .3);
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
 
   &__logo {
     width: 3rem;
@@ -198,7 +204,7 @@ $_color-text-active: rgb(24, 119, 184);
 
     @media screen and (min-width: $breakpoint-mobile) {
       display: flex;
-    }
+      }
   }
 
   &__search-popup {
@@ -206,12 +212,14 @@ $_color-text-active: rgb(24, 119, 184);
     top: -4rem;
     left: 1rem;
     right: 1rem;
-    background-color: #fff;
+    background-color: white;
     padding: 1rem;
     transition: top .5s ease-in-out;
+    z-index: 100;
 
     &--show {
-      top: 1rem;
+      top: 0;
+
     }
   }
 }

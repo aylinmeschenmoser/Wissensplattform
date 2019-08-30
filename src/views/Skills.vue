@@ -5,25 +5,31 @@
     </div>
   </div>
 </template>
+
 <script>
 import SkillBox from '../components/SkillBox.vue';
 
 export default {
   name: 'wp-skills',
+
   components: {
     SkillBox
   },
+
   data() {
     return {
     };
   },
+
   created() {
     console.log('wp-skills::created()');
   }
 };
 </script>
+
 <style lang="scss">
 @import '../styles/variables';
+
 .wp-skills-container {
   background-color: white;
 }

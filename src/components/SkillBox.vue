@@ -7,6 +7,7 @@
       <input
         class="wp-skill-box-content__search"
         placeholder="Suchen..." />
+        <!-- v-model="searchTerm" /> -->
       <ul>
         <li class="wp-skill-box-content__items">
           Beratung
@@ -44,13 +45,18 @@
 <script>
 export default {
   name: 'SkillBox',
-  components: {},
+  components: {
+  },
+
   props: {
     boxTitle: String
   },
+
   data() {
-    return {};
+    return {
+    };
   },
+
   created() {
     console.log('SkillBox::created()', this.newsItems);
   },
@@ -90,7 +96,6 @@ export default {
       border-bottom: 1px solid grey;
     }
   }
-
   &__search {
     width: 100%;
     border: 1px solid $color-text;
@@ -119,4 +124,5 @@ export default {
     padding: 1rem 0;
   }
 }
+
 </style>

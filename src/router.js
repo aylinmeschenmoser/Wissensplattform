@@ -1,10 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Blog from './views/Blog.vue';
-import Company from './views/Company.vue';
-import Knowledge from './views/Knowledge.vue';
 import News from './views/News.vue';
+import Blog from './views/Blog.vue';
+import Knowledge from './views/Knowledge.vue';
 import Skills from './views/Skills.vue';
+import Company from './views/Company.vue';
+import Hub from './views/Hub.vue';
 import User from './views/User.vue';
 
 Vue.use(Router);
@@ -14,37 +15,42 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      redirect: '/news'
+      redirect: '/news',
     },
     {
       path: '/news',
       name: 'news',
-      component: News
+      component: News,
     },
     {
       path: '/blog',
       name: 'blog',
-      component: Blog
+      component: Blog,
     },
     {
       path: '/knowledge',
       name: 'knowledge',
-      component: Knowledge
+      component: Knowledge,
     },
     {
       path: '/skills',
       name: 'skills',
-      component: Skills
+      component: Skills,
     },
     {
       path: '/company',
       name: 'company',
-      component: Company
+      component: Company,
+    },
+    {
+      path: '/hub',
+      name: 'hub',
+      component: Hub,
     },
     {
       path: '/user',
       name: 'user',
-      component: User
-    }
-  ]
+      component: User,
+    },
+  ],
 });
