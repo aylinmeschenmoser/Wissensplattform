@@ -42,5 +42,4 @@ export default {
 .wp-facebook-box{
   @include news-box;
 }
-
 </style>
