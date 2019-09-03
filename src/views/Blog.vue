@@ -5,7 +5,7 @@
       <div class="wp-blog-container__categories">
       </div>
       <div class="wp-blog-container__entry">
-        <blog-entry class="wp-blog-container__item"/>
+        BLOG ENTRY
       </div>
     </div>
   </div>
