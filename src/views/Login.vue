@@ -9,7 +9,6 @@
         class="wp-login-form__input wp-login-form-input"
         placeholder="Benutzername"
         v-model="username">
-
       <label for="password" class="wp-login-form__label wp-login-form-label">Passwort</label>
       <input
         type="password"
@@ -17,12 +16,10 @@
         class="wp-login-form__input wp-login-form-input"
         placeholder="Passwort"
         v-model="password">
-
       <label class="wp-login-form__checkbox wp-login-form-checkbox">
         <input type="checkbox" class="wp-login-form-checkbox__input" v-model="remember">
         Angemeldet bleiben
       </label>
-
       <span v-if="error" class="wp-login-form__error">{{ error }}</span>
       <button class="wp-login-form__submit wp-login-form-submit" @click="login">Anmelden</button>
     </form>
@@ -122,6 +119,10 @@ export default {
   color: #333;
   padding: .75rem;
   min-height: 2rem;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .wp-login-form-checkbox {

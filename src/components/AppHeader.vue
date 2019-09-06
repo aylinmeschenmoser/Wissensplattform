@@ -1,7 +1,7 @@
 <template>
   <header class="wp-header">
     <img src="../assets/np-logo.png" class="wp-header__logo" />
-      <ul class="wp-header__menu wp-menu">
+      <ul v-if="showInteractionElements" class="wp-header__menu wp-menu">
         <li class="wp-menu__item wp-menu-item">
           <router-link
             class="wp-menu-item__link"
@@ -57,7 +57,7 @@
           </router-link>
         </li>
       </ul>
-    <div class="wp-header__icons wp-header-icons">
+    <div v-if="showInteractionElements" class="wp-header__icons wp-header-icons">
       <i class="wp-header-icons__item fab fa-search" @click="showSearchPopup"></i>
       <router-link
         class="wp-header-icons__item fab fa-user"
@@ -66,7 +66,7 @@
         exact>
       </router-link>
     </div>
-    <div class="wp-header__search-popup wp-search-popup">
+    <div v-if="showInteractionElements" class="wp-header__search-popup wp-search-popup">
       <div
         class="wp-search-popup__backdrop"
         :class="{ 'wp-search-popup__backdrop--show': isSearchPopupOpen }"></div>
@@ -93,12 +93,19 @@ export default {
   data() {
     return {
       isSearchPopupOpen: false,
-      searchTerm: ''
+      searchTerm: '',
+      showInteractionElements: true
     };
   },
 
   created() {
     console.log('AppHeader::created()');
+
+    if (this.$route.name === 'login') {
+      this.showInteractionElements = false;
+    }
+
+    //this.showInteractionElements = this.$route.name === 'login' ? false : true;
   },
 
   methods: {
@@ -119,6 +126,16 @@ export default {
       console.log('AppHeader::showSearchPopup()');
 
       this.isSearchPopupOpen = true;
+    },
+  },
+
+  watch: {
+    '$route.name': function (newValue) {
+      if (newValue === 'login') {
+        this.showInteractionElements = false;
+      } else {
+        this.showInteractionElements = true;
+      }
     }
   }
 };
@@ -133,6 +150,8 @@ $_color-text: rgb(103, 109, 113);
 .wp-menu{
   display: flex;
   list-style: none;
+  width: 512px;
+  justify-content: space-between;
 }
 
 .wp-menu-item{
@@ -156,6 +175,7 @@ $_color-text: rgb(103, 109, 113);
 
 .wp-header-icons {
   color: $color-items;
+  margin-right: 10rem;
 
   &__item {
     font-size: 1.3rem;
@@ -183,8 +203,8 @@ $_color-text: rgb(103, 109, 113);
 
 //main block muss ganz nach unten
 .wp-header {
-  height: 5rem;
-  padding: 0 1rem;
+  height: 6.75rem;
+  //padding: 0 1rem;
   position: relative;
   z-index: 10;
   display: flex;
@@ -196,7 +216,8 @@ $_color-text: rgb(103, 109, 113);
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.3);
 
   &__logo {
-    width: 3rem;
+    margin-left: 10rem;
+    width: 5rem;
     height: auto;
   }
 

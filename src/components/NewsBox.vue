@@ -77,7 +77,7 @@ export default {
       searchTerm: '',
       maxInputLength: 320,
       modalIsOpen: false,
-      numberOfVisibleEntries: 4,
+      numberOfVisibleEntries: 5,
       userInput: '',
       userInputLength: 0,
     };

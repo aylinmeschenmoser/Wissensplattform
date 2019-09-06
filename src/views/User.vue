@@ -1,7 +1,7 @@
 <template>
   <div class="wp-user">
     <h2 class="wp-user__header">Account</h2>
-    <ul>
+    <ul class="wp-user__liste">
       <li class="wp-user__personal wp-user-personal">
         Meine Blog-Beiträge
         <i class="wp-user-personal__caret fab fa-caret-right" />
@@ -93,6 +93,10 @@ export default {
   align-items: center;
   font-weight: inherit;
   padding: 0 1rem;
+
+  &__liste {
+    list-style: none;
+  }
 
   &__header {
     color: $color-text-active;

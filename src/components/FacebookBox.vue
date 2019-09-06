@@ -7,9 +7,9 @@
       <div
         class="fb-page"
         data-href="https://www.facebook.com/netzwerkp/"
-        data-tabs="timeline, events, messages"
+        data-tabs="timeline"
         data-width="512"
-        data-height="739"
+        data-height="500"
         data-small-header="true"
         data-adapt-container-width="true"
         data-hide-cover="false"

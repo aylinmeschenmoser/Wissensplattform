@@ -11,7 +11,7 @@
     align-items: center;
 
     &__title {
-      font-weight: 400;
+      font-weight: 500;
       color: $color-text-active;
     }
   }
@@ -21,7 +21,7 @@
     padding: 0 1rem 1rem 1rem;
 
     @media screen and (min-width: $breakpoint-tablet) {
-      height: calc(100vh - 14.5rem);
+      height: calc(100vh - 16.25rem);
       overflow-y: scroll;
     }
   }

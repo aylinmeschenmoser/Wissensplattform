@@ -177,7 +177,7 @@ export default {
   @media screen and (min-width: $breakpoint-desktop) {
     margin-left: 10rem;
     margin-right: 10rem;
-    }
+  }
 
   &__item {
     flex: 1 1 100%;
@@ -197,7 +197,7 @@ export default {
 
     @media screen and (min-width: $breakpoint-tablet) {
       flex: 0 1 32%;
-      max-height: calc(100vh - 7rem);
+      max-height: calc(100vh - 9.75rem);
     }
   }
 }
