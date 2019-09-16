@@ -5,331 +5,32 @@
           <div class="wp-filter__searches wp-filter-searches">
             <input
               class="wp-filter-searches__search"
-              placeholder="Suchen"
-              v-model="searchTerm" />
+              placeholder="Suchen" />
             <button class="wp-filter-searches__delete">Filter löschen</button>
           </div>
           <ul class="wp-filters">
-            <span @click="showFilters" class="wp-filters__label wp-filters-label">
-              <span>Arbeitstools</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Bilddatenbanken</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">CLM-Portal</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">CMS</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">easyJob</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Eclipse</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">InCatalog</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">KanbanBoard</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Konfigurator</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">MAM</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Mellow Colour</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">One2Edit</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Slack</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Trello</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Wyfiles</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">XML</li>
-            </ul>
-            <span class="wp-filters__label wp-filters-label">
-              <span>Bildbearbeitung</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">CGI</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Colormanagement</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Packaging</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Retuche</li>
-            </ul>
-            <span class="wp-filters__label wp-filters-label">
-              <span>Beratung</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Kundenberatung</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Kundenpräsentation</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Schulung / Workshop</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">strategische Beratung</li>
-            </ul>
-            <span class="wp-filters__label wp-filters-label">
-              <span>EDV-Kenntnisse</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Asobe (Allgemein)</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">CAD</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Cheetah</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Cinema 4D</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Datev</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Enfocus PitStop</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Excel</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Joomla</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Logic Pro Audio</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Mac OS</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Outlook</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">PowerPoint</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">SAP</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Selenium Plugin</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Sketch / Book</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Takondi</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Visio</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Word</li>
-            </ul>
-            <span class="wp-filters__label wp-filters-label">
-              <span>Fotografie</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Allgemein</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Food</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">People</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Produkte</li>
-            </ul>
-            <span class="wp-filters__label wp-filters-label">
-              <span>Fremdsprachen</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Englisch</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Französisch</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Griechisch</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Italienisch</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Niederländisch</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Russisch</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Spanisch</li>
-            </ul>
-            <span class="wp-filters__label wp-filters-label">
-              <span>Gestaltung / Datenerstellung</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">App-Design</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">CI-Konformität</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Druckvorstufe</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Film</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Layout</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Online-Medien</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Packaging</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Postproduction</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Reinzeichnung / Satz</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Scribble</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Typografie</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Webdesign</li>
-            </ul>
-            <span class="wp-filters__label wp-filters-label">
-              <span>Marketing</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Marketing allgemein</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Onlinemarketing</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Personalmarketing</li>
-            </ul>
-            <span class="wp-filters__label wp-filters-label">
-              <span>nP Skills</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Brainstorming / Ideenfinder</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Ausbilder</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Konzeption</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Korrektorat / Lektorat</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Mentoring</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">NewBusiness</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Organisation / Struktur</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Schulung / Workshop</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Social-Media-Plattformen</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Technischer Support</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Text / Formulierung / Gestaltung</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Unternehmensberatung</li>
-            </ul>
-            <span class="wp-filters__label wp-filters-label">
-              <span>nP Tools</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Checkflow</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Imageflow</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Mediaflow</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Onlineshop Magento</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Orderflow</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Statusflow</li>
-            </ul>
-            <span class="wp-filters__label wp-filters-label">
-              <span>Produkte nP</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">[nP]analytics</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">[nP]connect</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">[nP]creator</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">[nP]enriched media</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">[nP]pocket</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">[nP]vision</li>
-            </ul>
-            <span class="wp-filters__label wp-filters-label">
-              <span>Programmierung</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Chili</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">CMS</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">CSS</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">HTML</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">JavaScript</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">PHP</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Wordpress</li>
-            </ul>
-            <span class="wp-filters__label wp-filters-label">
-              <span>Projektmanagement</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Allgemein</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Digitale Medien</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Druck- / Werbetechnik</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Einkauf</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Give-Aways</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Logistik</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Mailing</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Messe & Event</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Multichanelmangement</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">POS / 3D-Werbemittel</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">QMS</li>
-            </ul>
-            <span class="wp-filters__label wp-filters-label">
-              <span>Softskills</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Einfühlsvermögen (Personal)</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Konfliktmanagement</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Meditation</li>
-            </ul>
-            <span class="wp-filters__label wp-filters-label">
-              <span>Video</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Equipment</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Produktion</li>
-              <li class="wp-filters-categories__item wp-filters-categories-item">
-                <input type="checkbox" class="wp-filters-categories-item__checkbox">Schnitt</li>
-            </ul>
+            <li
+              class="wp-filters__category wp-filter-category"
+              v-for="filter in skillFilters"
+              :key="filter.category">
+
+              <span @click="toggleFilter(filter)" class="wp-filter-category__label">
+                <span>{{ filter.category }}</span>
+                <i class="fa-caret-right"></i>
+              </span>
+              <ul
+                class="wp-filter-category__skills wp-filter-skills"
+                :class="{
+                  'wp-filter-skills--active': !!filter.active
+                }">
+                <li
+                  class=""
+                  v-for="skill in filter.skills"
+                  :key="skill">
+                  <input type="checkbox" class="">{{ skill }}
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
         <div class="wp-skill-box-content__users wp-users">
@@ -430,10 +131,31 @@ export default {
 
   data() {
     return {
+      skillFilters: [{
+        active: false,
+        category: 'Arbeitstools',
+        skills: [
+          'Bilddatenbanken',
+          'CLM-Portal',
+          'CMS'
+        ]
+      }, {
+        active: false,
+        category: 'Bildbearbeitung',
+        skills: [
+          'CGI',
+          'Colormanagment',
+          'Packaging'
+        ]
+      }]
     };
   },
 
   methods: {
+    toggleFilter(filter) {
+      console.log('SkillBox::toggleFilter()');
+      filter.active = !filter.active;
+    }
   },
 
   created() {

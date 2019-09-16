@@ -8,6 +8,7 @@ import Skills from './views/Skills.vue';
 import Company from './views/Company.vue';
 import Hub from './views/Hub.vue';
 import User from './views/User.vue';
+import Impressum from './views/Impressum.vue';
 
 Vue.use(Router);
 
@@ -57,6 +58,11 @@ export default new Router({
       path: '/user',
       name: 'user',
       component: User
+    },
+    {
+      path: '/impressum',
+      name: 'impressum',
+      component: Impressum
     }
   ]
 });
