@@ -5,17 +5,33 @@
           <div class="wp-filter__searches wp-filter-searches">
             <input
               class="wp-filter-searches__search"
-              placeholder="Suchen"
-              v-model="searchTerm" />
+              placeholder="Suchen" />
             <button class="wp-filter-searches__delete">Filter löschen</button>
           </div>
           <ul class="wp-filters">
-            <span @click="showFilters" class="wp-filters__label wp-filters-label">
-              <span>Arbeitstools</span>
-              <i class="wp-filters-label__fas fa-caret-right"></i>
-            </span>
-            <ul class="wp-filters__categories wp-filters-categories">
-              <li class="wp-filters-categories__item wp-filters-categories-item">
+            <li
+              class="wp-filters__category wp-filter-category"
+              v-for="filter in skillFilters"
+              :key="filter.category">
+              <span @click="toggleFilter(filter)" class="wp-filter-category__label">
+                <span>{{ filter.category }}</span>
+                <i class="fa-caret-right"></i>
+              </span>
+              <ul class="wp-filter-category__skills wp-filter-skills"
+                :class="{
+                  'wp-filter-skills--active': !!filter.active
+                }">
+                <li
+                  class="wp-filter-skills__item wp-filter-skills-item"
+                  v-for="skill in filter.skills"
+                  :key="skill">
+                  <input type="checkbox" class="wp-filter-skills-item__checkbox">{{ skill }}
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+              <!-- <li class="wp-filters-categories__item wp-filters-categories-item">
                 <input type="checkbox" class="wp-filters-categories-item__checkbox">Bilddatenbanken</li>
               <li class="wp-filters-categories__item wp-filters-categories-item">
                 <input type="checkbox" class="wp-filters-categories-item__checkbox">CLM-Portal</li>
@@ -331,7 +347,7 @@
                 <input type="checkbox" class="wp-filters-categories-item__checkbox">Schnitt</li>
             </ul>
           </ul>
-        </div>
+        </div> -->
         <div class="wp-skill-box-content__users wp-users">
           <div class="wp-users__entry wp-users-entry">
             <img class="wp-users-entry__img" src="../assets/user-img.png">
@@ -430,10 +446,31 @@ export default {
 
   data() {
     return {
+      skillFilters: [{
+        active: false,
+        category: 'Arbeitstools',
+        skills: [
+          'Bilddatenbanken',
+          'CLM-Portal',
+          'CMS',
+        ]
+      }, {
+        active: false,
+        category: 'Bildbearbeitung',
+        skills: [
+          'CGI',
+          'Colormangement',
+          'Packaging'
+        ]
+      }]
     };
   },
 
   methods: {
+    toggleFilter(filter) {
+      console.log('SkillBox::toggleFilter()', filter);
+      filter.active = !filter.active;
+    }
   },
 
   created() {
@@ -542,7 +579,7 @@ export default {
   }
 }
 
-.wp-filters-categories {
+.wp-filter-skills {
   display: none;
 
   &--active {

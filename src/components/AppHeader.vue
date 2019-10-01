@@ -104,8 +104,6 @@ export default {
     if (this.$route.name === 'login') {
       this.showInteractionElements = false;
     }
-
-    //this.showInteractionElements = this.$route.name === 'login' ? false : true;
   },
 
   methods: {

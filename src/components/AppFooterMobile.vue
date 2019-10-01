@@ -33,16 +33,6 @@
       <li class="wp-footer-mobile__item wp-menu-item">
         <router-link
         class="wp-menu-item__link"
-        to="/skills"
-        titel="Skills"
-        active-class="wp-menu-item__link--active"
-        exact>
-        <i class="wp-menu-item__skills fab fa-cogs"></i>
-        </router-link>
-      </li>
-      <li class="wp-footer-mobile__item wp-menu-item">
-        <router-link
-        class="wp-menu-item__link"
         to="/company"
         titel="Unternehmen"
         active-class="wp-menu-item__link--active"

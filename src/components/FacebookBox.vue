@@ -9,7 +9,7 @@
         data-href="https://www.facebook.com/netzwerkp/"
         data-tabs="timeline"
         data-width="512"
-        data-height="500"
+        data-height="600"
         data-small-header="true"
         data-adapt-container-width="true"
         data-hide-cover="false"
@@ -30,6 +30,22 @@ export default {
   name: 'FacebookBox',
   components: {
   },
+
+  mounted() {
+    const script = document.createElement('script');
+    script.setAttribute('src', 'https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v4.0');
+    script.setAttribute('crossOrigin', 'anonymous');
+    script.setAttribute('id', 'facebook-widget');
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  },
+
+  beforeDestroy() {
+    const element = document.getElementById('facebook-widget');
+    document.body.removeChild(element);
+  }
+
 };
 </script>
 
